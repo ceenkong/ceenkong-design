@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CeenKong Design Review</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="CeenKong Design home">
+        <span class="brand-mark">CK</span>
+        <span>
+          <strong>CeenKong Design</strong>
+          <small>Stage review portal</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="./platform-mvp.html">Platform MVP</a>
+        <a href="https://github.com/ceenkong/ceenkong-design/pulls">Pull requests</a>
+        <a href="https://github.com/ceenkong/ceenkong-design/issues">Issues</a>
+      </nav>
+    </header>
+
+    <main class="page-grid">
+      <section class="review-summary" aria-labelledby="review-title">
+        <div class="eyebrow">Public design output</div>
+        <h1 id="review-title">CeenKong APK Factory review board</h1>
+        <p>
+          Static previews are published here whenever a design stage is ready.
+          The owner reviews the page, comments on the linked PR or issue, and
+          agents continue only after explicit approval.
+        </p>
+        <div class="summary-actions">
+          <a class="primary-link" href="./platform-mvp.html">Open platform preview</a>
+          <a class="secondary-link" href="https://github.com/ceenkong/ceenkong-design/pull/4">Review PR #4</a>
+        </div>
+      </section>
+
+      <section class="status-panel" aria-label="Current review gates">
+        <div class="status-row">
+          <span class="status-dot needs-review"></span>
+          <div>
+            <strong>Owner review required</strong>
+            <span>Platform MVP flow is waiting for Stage 1 feedback.</span>
+          </div>
+        </div>
+        <div class="status-row">
+          <span class="status-dot draft"></span>
+          <div>
+            <strong>Draft tracks pending</strong>
+            <span>Engine output and infra operator UX are still queued.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="track-list" aria-label="Design tracks">
+        <article class="track-card active">
+          <div class="track-meta">
+            <span class="track-code">PLT</span>
+            <span class="stage-badge review">Stage 1 review</span>
+          </div>
+          <h2>Platform MVP Flow</h2>
+          <p>Django web workflow for upload, analysis, build configuration, task logs, artifact download, and English/Simplified Chinese UI support.</p>
+          <dl>
+            <div>
+              <dt>Target repo</dt>
+              <dd>ceenkong-platform</dd>
+            </div>
+            <div>
+              <dt>Technology</dt>
+              <dd>Django templates, HTMX-style interactions</dd>
+            </div>
+            <div>
+              <dt>Review</dt>
+              <dd>Owner feedback required before Stage 2</dd>
+            </div>
+          </dl>
+          <a href="./platform-mvp.html">View preview</a>
+        </article>
+
+        <article class="track-card">
+          <div class="track-meta">
+            <span class="track-code">ENG</span>
+            <span class="stage-badge draft">Queued</span>
+          </div>
+          <h2>Engine Output Patterns</h2>
+          <p>Presentation rules for analysis findings, pipeline steps, structured logs, and artifacts.</p>
+          <dl>
+            <div>
+              <dt>Target repo</dt>
+              <dd>ceenkong-engine</dd>
+            </div>
+            <div>
+              <dt>Next issue</dt>
+              <dd><a href="https://github.com/ceenkong/ceenkong-design/issues/2">Issue #2</a></dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="track-card">
+          <div class="track-meta">
+            <span class="track-code">OPS</span>
+            <span class="stage-badge draft">Queued</span>
+          </div>
+          <h2>Infra Operator UX</h2>
+          <p>Setup, deployment, environment validation, and runbook surfaces for internal operators.</p>
+          <dl>
+            <div>
+              <dt>Target repo</dt>
+              <dd>ceenkong-infra</dd>
+            </div>
+            <div>
+              <dt>Next issue</dt>
+              <dd><a href="https://github.com/ceenkong/ceenkong-design/issues/3">Issue #3</a></dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

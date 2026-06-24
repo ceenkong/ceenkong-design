@@ -4,6 +4,12 @@ CeenKong Design owns UI/UX design for **CeenKong APK Factory**.
 
 Design work here must be implementation-aware. The goal is not to create abstract visual concepts that engineers must reinterpret. The goal is to provide design specs that match the technologies and boundaries of the implementation repositories.
 
+Public review site:
+
+- Pages URL: https://ceenkong.github.io/ceenkong-design/
+- Static source: `site/`
+- Deployment: `.github/workflows/pages.yml`
+
 ## Repository Map
 
 ```text
@@ -21,6 +27,7 @@ docs/design-system.md       Shared product UI rules and components
 docs/platform/              UI specs for ceenkong-platform
 docs/engine/                UI presentation specs for engine outputs
 docs/infra/                 Operator/deployment UX specs for infra workflows
+site/                       Public static review pages and stage previews
 ```
 
 ## Start Here
@@ -34,5 +41,4 @@ All designer agents must read:
 
 ## Current Status
 
-Planning/scaffolding stage. No high-fidelity design assets exist yet.
-
+Planning/scaffolding stage. Static review pages exist, but no design is implementation-ready until Stage 4 receives explicit owner approval.

@@ -12,6 +12,7 @@ Before changing files, read:
 4. `docs/design-system.md`
 5. `docs/design-review-gates.md`
 6. The target area spec
+7. Current static review pages under `site/`
 
 ## Ownership Boundary
 
@@ -53,6 +54,21 @@ Do not introduce UI patterns that require a major framework shift without first 
 - Define empty, loading, success, warning, failure, and permission states.
 - Use consistent terminology with `ceenkong-doc`.
 - Update design docs before implementation repositories change user-facing UI.
+- Update `site/` whenever a design stage is ready for owner review.
+
+## Public Pages Rule
+
+`ceenkong-design` is public so the project owner can review static design output from any machine.
+
+Designer agents must:
+
+- keep static stage previews in `site/`
+- publish reviewable output through GitHub Pages
+- include the Pages URL in every design-stage PR or issue comment
+- clearly mark whether the page is draft, needs owner review, user-approved, or implementation-ready
+- avoid exposing secrets, APK files, signing material, customer data, or private implementation details in public pages
+
+Do not treat a published Pages preview as approval. Approval still requires an explicit PR or issue comment, or the `user-approved` label.
 
 ## Owner Review Gates
 
@@ -68,6 +84,8 @@ Required stages:
 Rules:
 
 - Add the `needs-user-review` label when a stage is ready for review.
+- Update the matching static Pages preview before asking for review.
+- Include the Pages URL in the review request.
 - Do not add `implementation-ready` until the owner approves the implementation handoff stage.
 - Do not assume silence means approval.
 - Do not ask development agents to implement unapproved UI changes.
