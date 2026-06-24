@@ -29,22 +29,25 @@
           <p>
             This static page shows the current reviewable direction for the
             Django product UI. It is not implementation-ready until Stage 4 is
-            approved.
+            approved. The platform IA must support English and Simplified
+            Chinese from the first product slice, with a user-selectable
+            language switch.
           </p>
         </div>
         <aside class="review-note" aria-label="Review status">
           <strong>Needs owner review</strong>
           <span>Approve or request changes on PR #4 before Stage 2.</span>
+          <span>Language switch: English / 简体中文</span>
         </aside>
       </section>
 
       <section class="flow-strip" aria-label="Primary workflow">
-        <span>Upload APK</span>
-        <span>Analyze</span>
-        <span>Inspect</span>
-        <span>Configure build</span>
-        <span>Monitor task</span>
-        <span>Download artifact</span>
+        <span>Upload APK<br><small>上传 APK</small></span>
+        <span>Analyze<br><small>分析</small></span>
+        <span>Inspect<br><small>检查</small></span>
+        <span>Configure build<br><small>配置构建</small></span>
+        <span>Monitor task<br><small>监控任务</small></span>
+        <span>Download artifact<br><small>下载产物</small></span>
       </section>
 
       <section class="workspace-shell" aria-label="Low fidelity product shell">
@@ -139,6 +142,10 @@
         <article>
           <h2>Design decision needed</h2>
           <p>Confirm the primary screen sequence and navigation before agents define detailed wireframes.</p>
+        </article>
+        <article>
+          <h2>Language support</h2>
+          <p>English and Simplified Chinese / 英文与简体中文 are both first-slice requirements. Users can switch the active UI language, and navigation, statuses, form labels, and review-facing text must preserve equivalent meaning in both languages.</p>
         </article>
         <article>
           <h2>Architecture dependency</h2>

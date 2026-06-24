@@ -358,6 +358,14 @@ dd {
   text-align: center;
 }
 
+.flow-strip small {
+  color: var(--muted);
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
 .workspace-shell {
   background: #e9ede8;
   border: 1px solid var(--line);
