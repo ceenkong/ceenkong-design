@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Infra Operator Preview - CeenKong Design</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="CeenKong Design home">
+        <span class="brand-mark">CK</span>
+        <span>
+          <strong>CeenKong Design</strong>
+          <small>Infra operator preview</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="./index.html">Review board</a>
+        <a href="https://github.com/ceenkong/ceenkong-design/issues/3">Issue #3</a>
+      </nav>
+    </header>
+
+    <main class="prototype-page">
+      <section class="prototype-header">
+        <div>
+          <div class="eyebrow">Stage 1 - information architecture</div>
+          <h1>Infra operator runbook flow</h1>
+          <p>
+            This preview defines the operator path for deployment, health
+            checks, and maintenance in <code>ceenkong-infra</code>. It is a
+            documentation and runbook UX flow, not an implementation-ready
+            command handoff.
+          </p>
+        </div>
+        <aside class="review-note" aria-label="Review status">
+          <strong>Needs owner review</strong>
+          <span>Approve or request changes on the Stage 1 PR before Stage 2.</span>
+        </aside>
+      </section>
+
+      <section class="flow-strip" aria-label="Primary workflow">
+        <span>Deployment overview</span>
+        <span>Environment config</span>
+        <span>Preflight validation</span>
+        <span>Start or update stack</span>
+        <span>Health and logs</span>
+        <span>Maintenance playbook</span>
+      </section>
+
+      <section class="workspace-shell" aria-label="Infra operator navigation map">
+        <aside class="sidebar">
+          <div class="sidebar-title">Operator surfaces</div>
+          <a class="nav-active" href="#overview">Deployment overview</a>
+          <a href="#environment">Environment config</a>
+          <a href="#preflight">Preflight validation</a>
+          <a href="#health">Health and logs</a>
+          <a href="#maintenance">Maintenance playbook</a>
+        </aside>
+
+        <section class="work-area">
+          <div class="toolbar">
+            <div>
+              <h2>Output owner: ceenkong-infra</h2>
+              <span>README and runbook Markdown for Docker Compose operators</span>
+            </div>
+            <button type="button">Stage 1 review</button>
+          </div>
+
+          <div class="screen-grid">
+            <article class="surface large" id="overview">
+              <div class="surface-title">
+                <strong>Deployment overview</strong>
+                <span>first decision point for local or internal deployment</span>
+              </div>
+              <div class="metric-row">
+                <div><span>Secrets</span><strong>required but never shown</strong></div>
+                <div><span>Deployment mode</span><strong>single-host compose</strong></div>
+                <div><span>Operator goal</span><strong>safe first start</strong></div>
+              </div>
+              <p>
+                Operators start here to identify prerequisites, deployment path,
+                and which follow-on runbook matches the current task.
+              </p>
+            </article>
+
+            <article class="surface" id="environment">
+              <div class="surface-title">
+                <strong>Environment configuration</strong>
+                <span>variable groups, secret sources, affected services</span>
+              </div>
+              <p>
+                Explains what must be configured before startup and how to
+                verify presence without exposing sensitive values.
+              </p>
+            </article>
+
+            <article class="surface" id="preflight">
+              <div class="surface-title">
+                <strong>Preflight validation</strong>
+                <span>ports, paths, signing material, service dependencies</span>
+              </div>
+              <ol class="timeline">
+                <li class="done">load env file</li>
+                <li class="done">confirm storage paths</li>
+                <li class="active">check signing material presence</li>
+                <li>verify ports and services</li>
+                <li>start compose stack</li>
+              </ol>
+            </article>
+
+            <article class="surface large" id="health">
+              <div class="surface-title">
+                <strong>Health and logs</strong>
+                <span>post-start checks and failure drill-down</span>
+              </div>
+              <p>
+                Maps operators from startup outcome to service health, log
+                inspection, and the likely failing subsystem.
+              </p>
+              <div class="finding warning">Open question: should a single helper script wrap these checks?</div>
+              <div class="finding info">Bounded path: optional MinIO and reverse proxy stay off the main deploy flow.</div>
+            </article>
+
+            <article class="surface large" id="maintenance">
+              <div class="surface-title">
+                <strong>Maintenance playbook</strong>
+                <span>backup, cleanup, and secret rotation branches</span>
+              </div>
+              <p>
+                Maintenance actions branch from the stable stack path and must
+                declare prerequisites, success signals, failure symptoms, and
+                rollback expectations.
+              </p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="handoff-grid" aria-label="Review focus">
+        <article>
+          <h2>Owner decision needed</h2>
+          <p>Approve the operator flow and runbook surface map before Stage 2 structure work begins.</p>
+        </article>
+        <article>
+          <h2>Implementation boundary</h2>
+          <p>No infra implementation repo should treat this as command-level handoff yet.</p>
+        </article>
+        <article>
+          <h2>Public safety rule</h2>
+          <p>Previews describe secret presence and validation only; they never publish real values or host details.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
