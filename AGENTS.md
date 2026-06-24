@@ -1,0 +1,59 @@
+# AI Agent Instructions
+
+This repository owns CeenKong UI/UX design. Treat `ceenkong-doc` as the source of truth for product and system architecture, and this repository as the source of truth for UI/UX decisions.
+
+## Required Reading
+
+Before changing files, read:
+
+1. `README.md`
+2. `ceenkong-doc/AGENTS.md`
+3. `ceenkong-doc/docs/architecture.md`
+4. `docs/design-system.md`
+5. The target area spec
+
+## Ownership Boundary
+
+Owned here:
+
+- design system
+- layout rules
+- screen flows
+- component behavior
+- empty/loading/error states
+- data presentation patterns
+- implementation-aware UI specifications
+
+Not owned here:
+
+- system architecture
+- product roadmap
+- web implementation code
+- engine implementation code
+- infra implementation code
+
+## Implementation-Aware Design Rule
+
+Every UI spec must name the target implementation repository and its expected technology constraints.
+
+Initial constraints:
+
+- `ceenkong-platform`: Django templates, server-rendered screens, HTMX/Alpine-style progressive interactions, optional Monaco later.
+- `ceenkong-engine`: structured task logs, analysis findings, failure categories, and artifact metadata consumed by the platform UI.
+- `ceenkong-infra`: Docker Compose setup, environment configuration, deployment status, and operator runbooks.
+
+Do not introduce UI patterns that require a major framework shift without first adding an ADR in `ceenkong-doc`.
+
+## Design Rules
+
+- Prioritize dense, operational interfaces over marketing-style pages for the internal MVP.
+- Keep screens task-focused: upload, analyze, configure, build, inspect logs, download artifacts.
+- Do not design a browser IDE for the MVP.
+- Define empty, loading, success, warning, failure, and permission states.
+- Use consistent terminology with `ceenkong-doc`.
+- Update design docs before implementation repositories change user-facing UI.
+
+## Safety Boundary
+
+Do not design workflows for unauthorized third-party APK modification, malware deployment, credential theft, stealth, persistence, or abuse.
+
