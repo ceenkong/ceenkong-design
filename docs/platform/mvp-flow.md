@@ -14,7 +14,7 @@ This document is not an implementation-ready handoff. Per `docs/design-review-ga
 - Django forms for upload, build configuration, and validation flows.
 - HTMX for progressive refresh of task status, tables, logs, and artifact readiness where useful.
 - Alpine-style JavaScript only for small local interactions such as disclosure panels and confirmation state.
-- Django internationalization for English and Simplified Chinese UI text from the first platform slice.
+- Django internationalization for switchable English and Simplified Chinese UI text from the first platform slice.
 - No React, Next.js, client-side routing, or browser IDE assumption for the MVP.
 
 ## User Role
@@ -26,6 +26,8 @@ The role needs an audit-friendly work surface that keeps project, APK, task, con
 ## Language Support
 
 - The platform UI must support English and Simplified Chinese at the same time.
+- Users must be able to switch the active UI language between English and Simplified Chinese.
+- The selected language should persist for the user or session. The exact control placement is a Stage 2 screen-structure decision.
 - Navigation labels, workflow names, status labels, form labels, validation messages, and owner-facing review text should be translation-ready rather than hard-coded in one language.
 - The information architecture should remain the same in both languages. English and Chinese users should follow the same screen sequence and see equivalent operational meaning.
 - Engine logs and artifact metadata may preserve source tool output, but platform chrome and explanatory UI text should render in the selected UI language.
