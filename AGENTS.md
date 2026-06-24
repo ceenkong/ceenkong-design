@@ -10,7 +10,8 @@ Before changing files, read:
 2. `ceenkong-doc/AGENTS.md`
 3. `ceenkong-doc/docs/architecture.md`
 4. `docs/design-system.md`
-5. The target area spec
+5. `docs/design-review-gates.md`
+6. The target area spec
 
 ## Ownership Boundary
 
@@ -53,7 +54,25 @@ Do not introduce UI patterns that require a major framework shift without first 
 - Use consistent terminology with `ceenkong-doc`.
 - Update design docs before implementation repositories change user-facing UI.
 
+## Owner Review Gates
+
+UI/UX work must be reviewed with the project owner in stages. A designer agent may not move a design issue to the next stage until the current stage has a PR or issue comment explicitly asking for owner review.
+
+Required stages:
+
+1. Information architecture and user flow
+2. Low-fidelity screen structure
+3. Component and state specification
+4. Implementation handoff
+
+Rules:
+
+- Add the `needs-user-review` label when a stage is ready for review.
+- Do not add `implementation-ready` until the owner approves the implementation handoff stage.
+- Do not assume silence means approval.
+- Do not ask development agents to implement unapproved UI changes.
+- If the owner requests changes, update the design and ask for review again.
+
 ## Safety Boundary
 
 Do not design workflows for unauthorized third-party APK modification, malware deployment, credential theft, stealth, persistence, or abuse.
-
