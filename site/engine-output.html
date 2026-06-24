@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Engine Output Preview - CeenKong Design</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="CeenKong Design home">
+        <span class="brand-mark">CK</span>
+        <span>
+          <strong>CeenKong Design</strong>
+          <small>Engine output preview</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="./index.html">Review board</a>
+        <a href="https://github.com/ceenkong/ceenkong-design/issues/2">Issue #2</a>
+      </nav>
+    </header>
+
+    <main class="prototype-page">
+      <section class="prototype-header">
+        <div>
+          <div class="eyebrow">Stage 1 - information architecture</div>
+          <h1>Engine output consumption flow</h1>
+          <p>
+            This preview shows how structured engine outputs move through the
+            Django platform UI. It defines operator navigation and information
+            group boundaries, not component-level implementation detail.
+          </p>
+        </div>
+        <aside class="review-note" aria-label="Review status">
+          <strong>Needs owner review</strong>
+          <span>Approve or request changes before Stage 2 screen structure work begins.</span>
+        </aside>
+      </section>
+
+      <section class="flow-strip" aria-label="Primary workflow">
+        <span>APK detail</span>
+        <span>Analysis summary</span>
+        <span>Analysis report</span>
+        <span>Build task detail</span>
+        <span>Artifact detail</span>
+        <span>Download decision</span>
+      </section>
+
+      <section class="workspace-shell" aria-label="Engine output navigation map">
+        <aside class="sidebar">
+          <div class="sidebar-title">Engine-driven surfaces</div>
+          <a class="nav-active" href="#apk-detail">APK detail</a>
+          <a href="#analysis-report">Analysis report</a>
+          <a href="#build-task">Build task detail</a>
+          <a href="#artifact-detail">Artifact detail</a>
+          <a href="#contract-gaps">Contract gaps</a>
+        </aside>
+
+        <section class="work-area">
+          <div class="toolbar">
+            <div>
+              <h2>Output owner: ceenkong-engine</h2>
+              <span>Consumed by Django templates and HTMX refresh surfaces in ceenkong-platform</span>
+            </div>
+            <button type="button">Stage 1 review</button>
+          </div>
+
+          <div class="screen-grid">
+            <article class="surface large" id="apk-detail">
+              <div class="surface-title">
+                <strong>APK detail</strong>
+                <span>entry point for latest engine status</span>
+              </div>
+              <div class="metric-row">
+                <div><span>Analysis</span><strong>completed</strong></div>
+                <div><span>Latest build</span><strong>failed</strong></div>
+                <div><span>Verification</span><strong>signed artifact pending review</strong></div>
+              </div>
+              <p>
+                Operators land here first to decide whether to inspect findings,
+                open the most recent task, or review artifact output.
+              </p>
+            </article>
+
+            <article class="surface" id="analysis-report">
+              <div class="surface-title">
+                <strong>Analysis report</strong>
+                <span>findings rollup and detail jump-off</span>
+              </div>
+              <p>
+                Receives package metadata, findings summary, and notable
+                warnings from engine analysis output.
+              </p>
+            </article>
+
+            <article class="surface" id="build-task">
+              <div class="surface-title">
+                <strong>Build task detail</strong>
+                <span>timeline, failure category, structured logs</span>
+              </div>
+              <ol class="timeline">
+                <li class="done">validate_input</li>
+                <li class="done">decode</li>
+                <li class="active">rebuild</li>
+                <li>sign</li>
+                <li>verify_signature</li>
+              </ol>
+            </article>
+
+            <article class="surface large" id="artifact-detail">
+              <div class="surface-title">
+                <strong>Artifact detail</strong>
+                <span>safe-download decision point</span>
+              </div>
+              <p>
+                Receives produced artifact metadata, provenance links, and
+                signature verification output so operators can determine whether
+                a file is ready for download.
+              </p>
+              <div class="finding warning">Contract gap: artifact type and readiness state are not yet defined.</div>
+              <div class="finding info">Contract gap: verification detail needs a stable explanation shape.</div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="handoff-grid" aria-label="Review focus">
+        <article>
+          <h2>Owner decision needed</h2>
+          <p>Approve the surface sequence and navigation model before low-fidelity structure work starts.</p>
+        </article>
+        <article id="contract-gaps">
+          <h2>Cross-repo follow-up</h2>
+          <p>Stage 1 identifies missing engine contract fields for step status, failure shape, findings detail, and artifact metadata.</p>
+        </article>
+        <article>
+          <h2>Implementation boundary</h2>
+          <p>No engine or platform code should implement new UI behavior until later stages are approved.</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
