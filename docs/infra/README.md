@@ -40,3 +40,14 @@ Operator documentation and scripts should make state obvious:
 - what data will be deleted
 - what secrets are required
 
+## Review Gate
+
+Infra UX design must follow `docs/design-review-gates.md`.
+
+The first infra design pass should stop after Stage 1: Information Architecture
+and User Flow, then request owner review before low-fidelity runbook structure
+or command-level handoff details are added.
+
+## Current Spec
+
+- `docs/infra/operator-runbook-ux.md`
