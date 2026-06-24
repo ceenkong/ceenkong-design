@@ -42,6 +42,12 @@ login
 -> download artifact
 ```
 
+## Review Gate
+
+Platform UI design must follow `docs/design-review-gates.md`.
+
+The first platform design pass should stop after Stage 1: Information Architecture and User Flow, then request owner review before adding low-fidelity screen structures.
+
 ## UI Priorities
 
 - Make task state obvious.
@@ -49,4 +55,3 @@ login
 - Make failures diagnosable.
 - Keep artifacts traceable to source APK and build config.
 - Avoid unnecessary customization in the MVP.
-
